@@ -1,6 +1,6 @@
 # Linkz App
 
-**Linkz App** is the frontend of a simple and efficient URL shortener I built. Developed with Next.js and managed with Bun, it provides a modern interface for shortening links.
+**Linkz App** is the frontend of a simple and efficient URL shortener I built. Developed with Next.js and managed with Bun, it provides a modern interface for shortening links. Available on https://linkz.ki0.tech/
 
 ## Technologies
 
