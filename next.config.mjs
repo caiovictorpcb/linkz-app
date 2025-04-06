@@ -7,6 +7,15 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  redirects: async () => {
+    return [
+      {
+        source: '/',
+        destination: '/url-shortener',
+        permanent: false, 
+      }, 
+    ]
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

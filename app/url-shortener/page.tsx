@@ -8,7 +8,7 @@ export default function Home() {
         <p className="text-slate-600 text-center mb-8">Shorten your long URLs into compact, easy-to-share links.</p>
         <UrlShortener />
       </div>
-    </main>
+    </main> 
   )
 }
 
