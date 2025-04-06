@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { Check, Copy, Link2 } from "lucide-react"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 export function UrlShortener() {
   const [url, setUrl] = useState("")
@@ -18,7 +18,7 @@ export function UrlShortener() {
   const [copied, setCopied] = useState(false)
   const { toast } = useToast()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     setError(null)
@@ -28,7 +28,6 @@ export function UrlShortener() {
         throw new Error("Please enter a URL")
       }
 
-      // Basic URL validation
       if (!url.startsWith("http://") && !url.startsWith("https://")) {
         toast({
           variant: 'destructive',
@@ -45,13 +44,14 @@ export function UrlShortener() {
     } finally {
       setIsLoading(false)
     }
-  }
+  },[url, toast])
 
-  const copyToClipboard = async () => {
+  const copyToClipboard = () => {
     if (shortUrl) {
-      await navigator.clipboard.writeText(shortUrl)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      navigator.clipboard.writeText(shortUrl).then(() => {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      })
     }
   }
 
