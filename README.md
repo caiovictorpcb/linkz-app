@@ -1,6 +1,6 @@
-# Linkz App
+# Tools App
 
-**Linkz App** is the frontend of a simple and efficient URL shortener I built. Developed with Next.js and managed with Bun, it provides a modern interface for shortening links. Available on https://linkz.ki0.tech/
+**Tools App** is a collection of simple and useful tools — like a URL shortener and a percentage calculator — built with **Next.js** and powered by **Bun**. This frontend connects to a Fastify-based API gateway to handle backend logic.. Available on https://ki0.tech
 
 ## Technologies
 
@@ -12,11 +12,11 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/caiovictorpcb/linkz-app.git
+   git clone https://github.com/caiovictorpcb/tools-app.git
    ```
 2. Navigate to the directory:
    ```bash
-   cd linkz-app
+   cd tools-app
    ```
 3. Install dependencies:
    ```bash
@@ -30,7 +30,7 @@ Start the development server:
 bun run dev
 ```
 
-Visit `http://localhost:3000` to shorten your URLs!
+Visit `http://localhost:8000` to use the tools.
 
 ## License
 
